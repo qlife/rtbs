@@ -1,0 +1,25 @@
+Generate Integer Sequences
+======
+
+Generate integers 0 to n. That's easy! A simple loop generate all integer in an array and then a fwrite() get the things done.
+
+```
+static unsigned int m[UINT_MAX];
+
+for i in [0, UINT_MAX)
+    m[i] <- i
+
+fwrite(...)
+```
+
+The result is below.
+
+```
+> time ./gen_int_seq.v1 ofile
+
+real	2m10.956s
+user	0m12.952s
+sys	0m12.112s
+```
+
+Could we do better? A simple improvement is to reduce the memory usage. The original array is huge and may consume swap space in may laptop (Core i7 16G RAM). The current version in the git just reduces the buffer size to 1GB and we could get this done in 36s. Almost 3.6x faster.
