@@ -1,3 +1,6 @@
+/* algorithm reference to
+http://faculty.cs.niu.edu/~hutchins/csci241/eval.htm
+*/
 #include<stdio.h>
 #include<stdlib.h>
 #include<ctype.h>
